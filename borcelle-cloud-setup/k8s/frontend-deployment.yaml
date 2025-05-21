@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: borcelle-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: borcelle-frontend
+  template:
+    metadata:
+      labels:
+        app: borcelle-frontend
+    spec:
+      containers:
+      - name: borcelle-frontend
+        image: tu_usuario_dockerhub/borcelle-frontend:latest
+        ports:
+        - containerPort: 80
